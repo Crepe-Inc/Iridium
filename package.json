@@ -1,0 +1,24 @@
+{
+  "name": "iridium",
+  "version": "1.2.1",
+  "description": "Genshin packet sniffer + visualizer in 1. Based on Pancake, god bless their poor souls.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "postinstall": "cd frontend && npm i && npm run build && cd .. && cd node_modules && cd node-kcp && npm i && cd .. && cd ..",
+    "main": "node . main"
+  },
+  "author": "Alg",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "delimiter-stream": "^3.0.1",
+    "ip-packet": "^1.1.0",
+    "node-kcp": "^1.0.12",
+    "pcap-parser": "^0.2.1",
+    "protobufjs": "^6.11.2",
+    "udp-packet": "^2.0.0",
+    "udp-proxy": "^1.2.0",
+    "ws": "^8.4.2"
+  }
+}

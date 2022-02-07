@@ -1,0 +1,619 @@
+[
+    {
+        "SetId": 10001,
+        "SetIcon": "UI_RelicIcon_10001_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210001,
+        "ContainsList": [
+            51140,
+            51120,
+            51150,
+            51110,
+            51130
+        ]
+    },
+    {
+        "SetId": 10002,
+        "SetIcon": "UI_RelicIcon_10002_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210002,
+        "ContainsList": [
+            52140,
+            52120,
+            52150,
+            52110,
+            52130
+        ]
+    },
+    {
+        "SetId": 10003,
+        "SetIcon": "UI_RelicIcon_10003_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210003,
+        "ContainsList": [
+            53140,
+            53120,
+            53150,
+            53110,
+            53130
+        ]
+    },
+    {
+        "SetId": 10004,
+        "SetIcon": "UI_RelicIcon_10004_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210004,
+        "ContainsList": [
+            54140,
+            54120,
+            54150,
+            54110,
+            54130
+        ]
+    },
+    {
+        "SetId": 10005,
+        "SetIcon": "UI_RelicIcon_10005_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210005,
+        "ContainsList": [
+            55140,
+            55120,
+            55150,
+            55110,
+            55130
+        ]
+    },
+    {
+        "SetId": 10006,
+        "SetIcon": "UI_RelicIcon_10006_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210006,
+        "ContainsList": [
+            56140,
+            56120,
+            56150,
+            56110,
+            56130
+        ]
+    },
+    {
+        "SetId": 10007,
+        "SetIcon": "UI_RelicIcon_10007_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210007,
+        "ContainsList": [
+            57140,
+            57120,
+            57150,
+            57110,
+            57130
+        ]
+    },
+    {
+        "SetId": 10008,
+        "SetIcon": "UI_RelicIcon_10008_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210008,
+        "ContainsList": [
+            58240,
+            58220,
+            58250,
+            58210,
+            58230
+        ]
+    },
+    {
+        "SetId": 10009,
+        "SetIcon": "UI_RelicIcon_10009_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210009,
+        "ContainsList": [
+            59140,
+            59120,
+            59150,
+            59110,
+            59130
+        ]
+    },
+    {
+        "SetId": 10010,
+        "SetIcon": "UI_RelicIcon_10010_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210010,
+        "ContainsList": [
+            60140,
+            60120,
+            60150,
+            60110,
+            60130
+        ]
+    },
+    {
+        "SetId": 10011,
+        "SetIcon": "UI_RelicIcon_10011_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210011,
+        "ContainsList": [
+            61140,
+            61120,
+            61150,
+            61110,
+            61130
+        ]
+    },
+    {
+        "SetId": 10012,
+        "SetIcon": "UI_RelicIcon_10012_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210012,
+        "ContainsList": [
+            62140,
+            62120,
+            62150,
+            62110,
+            62130
+        ]
+    },
+    {
+        "SetId": 10013,
+        "SetIcon": "UI_RelicIcon_10013_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 210013,
+        "ContainsList": [
+            63140,
+            63120,
+            63150,
+            63110,
+            63130
+        ]
+    },
+    {
+        "SetId": 14001,
+        "SetIcon": "UI_RelicIcon_14001_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 214001,
+        "ContainsList": [
+            71340,
+            71320,
+            71350,
+            71310,
+            71330
+        ]
+    },
+    {
+        "SetId": 14002,
+        "SetIcon": "UI_RelicIcon_14002_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 214002,
+        "ContainsList": [
+            72340,
+            72320,
+            72350,
+            72310,
+            72330
+        ]
+    },
+    {
+        "SetId": 14003,
+        "SetIcon": "UI_RelicIcon_14003_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 214003,
+        "ContainsList": [
+            73340,
+            73320,
+            73350,
+            73310,
+            73330
+        ]
+    },
+    {
+        "SetId": 14004,
+        "SetIcon": "UI_RelicIcon_14004_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 214004,
+        "ContainsList": [
+            74340,
+            74320,
+            74350,
+            74310,
+            74330
+        ]
+    },
+    {
+        "SetId": 15001,
+        "SetIcon": "UI_RelicIcon_15001_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215001,
+        "ContainsList": [
+            75340,
+            75320,
+            75350,
+            75310,
+            75330
+        ]
+    },
+    {
+        "SetId": 15002,
+        "SetIcon": "UI_RelicIcon_15002_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215002,
+        "ContainsList": [
+            76340,
+            76320,
+            76350,
+            76310,
+            76330
+        ]
+    },
+    {
+        "SetId": 15003,
+        "SetIcon": "UI_RelicIcon_15003_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215003,
+        "ContainsList": [
+            77340,
+            77320,
+            77350,
+            77310,
+            77330
+        ]
+    },
+    {
+        "SetId": 15004,
+        "SetIcon": "UI_RelicIcon_15004_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215004,
+        "DisableFilter": 1,
+        "ContainsList": [
+            78340,
+            78320,
+            78350,
+            78310,
+            78330
+        ]
+    },
+    {
+        "SetId": 15005,
+        "SetIcon": "UI_RelicIcon_15005_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215005,
+        "ContainsList": [
+            79340,
+            79320,
+            79350,
+            79310,
+            79330
+        ]
+    },
+    {
+        "SetId": 15006,
+        "SetIcon": "UI_RelicIcon_15006_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215006,
+        "ContainsList": [
+            80340,
+            80320,
+            80350,
+            80310,
+            80330
+        ]
+    },
+    {
+        "SetId": 15007,
+        "SetIcon": "UI_RelicIcon_15007_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215007,
+        "ContainsList": [
+            81340,
+            81320,
+            81350,
+            81310,
+            81330
+        ]
+    },
+    {
+        "SetId": 15008,
+        "SetIcon": "UI_RelicIcon_15008_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215008,
+        "ContainsList": [
+            82340,
+            82320,
+            82350,
+            82310,
+            82330
+        ]
+    },
+    {
+        "SetId": 15009,
+        "SetIcon": "UI_RelicIcon_15009_3",
+        "SetNeedNum": [
+            1
+        ],
+        "EquipAffixId": 215009,
+        "ContainsList": [
+            83330
+        ]
+    },
+    {
+        "SetId": 15010,
+        "SetIcon": "UI_RelicIcon_15010_3",
+        "SetNeedNum": [
+            1
+        ],
+        "EquipAffixId": 215010,
+        "ContainsList": [
+            84330
+        ]
+    },
+    {
+        "SetId": 15011,
+        "SetIcon": "UI_RelicIcon_15011_3",
+        "SetNeedNum": [
+            1
+        ],
+        "EquipAffixId": 215011,
+        "ContainsList": [
+            85330
+        ]
+    },
+    {
+        "SetId": 15012,
+        "SetIcon": "UI_RelicIcon_15012_3",
+        "SetNeedNum": [
+            1
+        ],
+        "EquipAffixId": 215012,
+        "DisableFilter": 1,
+        "ContainsList": [
+            86330
+        ]
+    },
+    {
+        "SetId": 15013,
+        "SetIcon": "UI_RelicIcon_15013_3",
+        "SetNeedNum": [
+            1
+        ],
+        "EquipAffixId": 215013,
+        "ContainsList": [
+            87330
+        ]
+    },
+    {
+        "SetId": 15014,
+        "SetIcon": "UI_RelicIcon_15014_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215014,
+        "ContainsList": [
+            88340,
+            88320,
+            88350,
+            88310,
+            88330
+        ]
+    },
+    {
+        "SetId": 15015,
+        "SetIcon": "UI_RelicIcon_15015_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215015,
+        "ContainsList": [
+            89340,
+            89320,
+            89350,
+            89310,
+            89330
+        ]
+    },
+    {
+        "SetId": 15016,
+        "SetIcon": "UI_RelicIcon_15016_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215016,
+        "ContainsList": [
+            90340,
+            90320,
+            90350,
+            90310,
+            90330
+        ]
+    },
+    {
+        "SetId": 15017,
+        "SetIcon": "UI_RelicIcon_15017_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215017,
+        "ContainsList": [
+            91340,
+            91320,
+            91350,
+            91310,
+            91330
+        ]
+    },
+    {
+        "SetId": 15018,
+        "SetIcon": "UI_RelicIcon_15018_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215018,
+        "ContainsList": [
+            92340,
+            92320,
+            92350,
+            92310,
+            92330
+        ]
+    },
+    {
+        "SetId": 15019,
+        "SetIcon": "UI_RelicIcon_15019_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215019,
+        "ContainsList": [
+            93442,
+            93422,
+            93452,
+            93412,
+            93432
+        ]
+    },
+    {
+        "SetId": 15020,
+        "SetIcon": "UI_RelicIcon_15020_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215020,
+        "ContainsList": [
+            94442,
+            94422,
+            94452,
+            94412,
+            94432
+        ]
+    },
+    {
+        "SetId": 15021,
+        "SetIcon": "UI_RelicIcon_15021_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215021,
+        "ContainsList": [
+            95442,
+            95422,
+            95452,
+            95412,
+            95432
+        ]
+    },
+    {
+        "SetId": 15022,
+        "SetIcon": "UI_RelicIcon_15022_4",
+        "SetNeedNum": [
+            2,
+            4
+        ],
+        "EquipAffixId": 215022,
+        "ContainsList": [
+            96442,
+            96422,
+            96452,
+            96412,
+            96432
+        ]
+    },
+    {
+        "SetId": 15000,
+        "SetIcon": "",
+        "SetNeedNum": [
+            3,
+            5
+        ],
+        "DisableFilter": 1,
+        "ContainsList": [
+            99340,
+            99320,
+            99350,
+            99310,
+            99330
+        ]
+    }
+]
