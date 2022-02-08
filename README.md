@@ -4,7 +4,7 @@ A genshin packet sniffer + visualizer in one.
 
 # Usage
 
-0. Bring your `packetIds.json` and `protos/` to the `data/` folder.
+0. Bring your `packetIds.json` and `proto/` to the `data/` folder.
 
 ½. `npm i`
 
