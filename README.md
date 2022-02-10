@@ -1,5 +1,5 @@
 # Iridium
-A genshin packet sniffer + visualizer in one.
+A KCP packet sniffer + visualizer in one.
 
 
 # Usage
