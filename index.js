@@ -3,11 +3,13 @@ const fs = require('fs');
 const httpDispatch = require('./backend/http-dispatch');
 const frontend = require('./backend/frontend-server');
 const sniffer = require('./backend/sniffer');
+const { exec } = require('child_process');
 
 if(process.argv[2] == 'main') {
 	sniffer.execute();
 	httpDispatch.execute();
 	frontend.execute();
+	exec('start http://localhost:1984/index.html');
 
 	if (!fs.existsSync('captures')) {
 		fs.mkdirSync('captures', {
