@@ -236,7 +236,7 @@ var proxyIP = '47.90.134.24';
 var proxyPort = 22101;
 async function execute() {
 	async function loop () {
-		if (!packetQueueSize) return setImmediate(loop);
+		if (!packetQueueSize) return setTimeout(loop, 32);
 		let decryptedDatagram;
 		let packetObject;
 		while (packetQueue.length) {
