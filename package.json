@@ -1,7 +1,7 @@
 {
   "name": "iridium",
   "version": "1.2.1",
-  "description": "Genshin packet sniffer + visualizer in 1. Based on Pancake, god bless their poor souls.",
+  "description": "KCP packet sniffer + visualizer in 1. Based on Pancake, god bless their poor souls.",
   "main": "index.js",
   "scripts": {
     "start": "node .",
