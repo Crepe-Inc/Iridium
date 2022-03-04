@@ -134,32 +134,35 @@ function downloadAll() {
 	};
 	saveTemplateAsFile('capture.json', FilteredPackets)
 }
-function copyCurrentPacket() {
-	function copyToClipboard(text) {
-	    if (window.clipboardData && window.clipboardData.setData) {
-	        // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
-	        return window.clipboardData.setData("Text", text);
+function copyToClipboard(text) {
+    if (window.clipboardData && window.clipboardData.setData) {
+        // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
+        return window.clipboardData.setData("Text", text);
 
-	    }
-	    else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
-	        var textarea = document.createElement("textarea");
-	        textarea.textContent = text;
-	        textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in Microsoft Edge.
-	        document.body.appendChild(textarea);
-	        textarea.select();
-	        try {
-	            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
-	        }
-	        catch (ex) {
-	            console.warn("Copy to clipboard failed.", ex);
-	            return prompt("Copy to clipboard: Ctrl+C, Enter", text);
-	        }
-	        finally {
-	            document.body.removeChild(textarea);
-	        }
-	    }
-	}
+    }
+    else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+        var textarea = document.createElement("textarea");
+        textarea.textContent = text;
+        textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in Microsoft Edge.
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+        }
+        catch (ex) {
+            console.warn("Copy to clipboard failed.", ex);
+            return prompt("Copy to clipboard: Ctrl+C, Enter", text);
+        }
+        finally {
+            document.body.removeChild(textarea);
+        }
+    }
+}
+function copyCurrentPacket() {
 	copyToClipboard(JSON.stringify(currentPacket))
+}
+function copyCurrentBin() {
+	copyToClipboard(currentPacket.packet)
 }
 
 function clear() {
@@ -196,9 +199,11 @@ onMount(() => {
 	<button title="Clear" data-icon="clear" class="red" on:click={clear}></button>
 	<button title="Lock scroll at the bottom" data-icon="keyboard_arrow_down" style="margin-top: auto;" class:green={stick} on:click={() => stick = !stick}></button>
 	{#if currentPacket}
-		<button title="Copy current packet" data-icon="collections_bookmark" style="margin-top: auto;" on:click={copyCurrentPacket}></button>
+		<button title="Copy current bin" data-icon="insert_drive_file" style="margin-top: auto;" on:click={copyCurrentBin}></button>
+		<button title="Copy current packet" data-icon="collections_bookmark" on:click={copyCurrentPacket}></button>
 	{:else}
-		<button title="Copy current packet" data-icon="collections_bookmark" style="margin-top: auto; opacity: 0.5"></button>
+		<button title="Copy current packet" data-icon="insert_drive_file" style="margin-top: auto; opacity: 0.5"></button>
+		<button title="Copy current packet" data-icon="collections_bookmark" style="opacity: 0.5"></button>
 	{/if}
 	{#if FilteredPackets && FilteredPackets.length > 0}
 		<button title="Export all filtered" data-icon="download" on:click={downloadAll}></button>

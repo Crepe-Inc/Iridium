@@ -142,7 +142,6 @@ async function processMHYPacket(packet) {
 			yuankey = key;
 		}
 		packets.push(recv);
-		
 	} while(recv);
 	hrTime = process.hrtime();
 	kcpobj.update(hrTime[0] * 1000000 + hrTime[1] / 1000)
@@ -187,14 +186,16 @@ async function decodePacketProto(packet, ip) {
 			packetID,
 			protoName,
 			object: object,
+			packet: packet.toString('base64')
 		}
 	}
 	if (packetID == protoName) {
 		o = {
 			packetID,
 			protoName,
-			object: packet,
-			missing: true
+			object: null,
+			missing: true,
+			packet: packet.toString('base64')
 		}
 	}
 	let packetSource = (ip.port == 22101 || ip.port == 22102) ? DIR_SERVER : DIR_CLIENT;
