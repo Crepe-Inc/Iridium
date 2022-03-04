@@ -186,7 +186,7 @@ async function decodePacketProto(packet, ip) {
 			packetID,
 			protoName,
 			object: object,
-			packet: packet.toString('base64')
+			packet: MHYbuf.parsePacketData(packet).toString('base64')
 		}
 	}
 	if (packetID == protoName) {
@@ -195,7 +195,7 @@ async function decodePacketProto(packet, ip) {
 			protoName,
 			object: null,
 			missing: true,
-			packet: packet.toString('base64')
+			packet: MHYbuf.parsePacketData(packet).toString('base64')
 		}
 	}
 	let packetSource = (ip.port == 22101 || ip.port == 22102) ? DIR_SERVER : DIR_CLIENT;
