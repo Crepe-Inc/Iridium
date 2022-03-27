@@ -337,11 +337,8 @@ let node, details, filterTableHost, orand = true;
 		<div class="filter-host">
 			<input type="text" bind:value={filter} placeholder=" PACKET" />
 			<div class="orand" on:click={() => orand = !orand}>
-				{#if orand}
-				<span and>AND</span>
-				{:else}
-				<span or>OR</span>
-				{/if}
+				<span and class:s={orand}>AND</span>
+				<span or class:s={!orand}>OR</span>
 			</div>
 			<input type="text" bind:value={JSONfilter} placeholder=" JSON" />
 		</div>
@@ -568,17 +565,16 @@ input[type="text"] {
 .orand {
 	font-size: 0.8em;
 	box-sizing: border-box;
-	padding: 3px;
+	padding: 2px 4px;
 	background: rgba(0,0,0,0.7);
 	border-bottom: 1px solid rgba(255,255,255,0.2);
 	cursor: pointer;
 }
-.orand:hover {
-	background: rgba(0,0,0,0.2);
+.orand:hover span {
+	background: rgba(255,255,255,0.1);
 }
 .orand span {
-	background: #1AA1E7;
-	color: white;
+	color: #777;
 	font-weight: 700;
 	padding: 0.3em 0.2em;
 	display: block;
@@ -587,8 +583,12 @@ input[type="text"] {
 	text-align: center;
 	user-select: none;
 }
-.orand span[or] {
-	margin-top: 1.5em;
+.orand span[and] {
+	margin-bottom: 2px;
+}
+.orand span.s {
+	background: #1AA1E7;
+	color: white;
 }
 
 </style>
