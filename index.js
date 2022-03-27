@@ -9,7 +9,12 @@ if(process.argv[2] == 'main') {
 	sniffer.execute();
 	httpDispatch.execute();
 	frontend.execute();
-	exec('start http://localhost:1984/index.html');
+	try{
+		const E = require('./backend/excelPivot');
+	}catch(e) {
+		console.error('                 Excels missing; skipping');
+	}
+	// exec('start http://localhost:1984/index.html');
 
 	if (!fs.existsSync('captures')) {
 		fs.mkdirSync('captures', {

@@ -221,6 +221,8 @@ async function decodePacketProto(packet, ip) {
 	return o;
 }
 
+
+
 function joinBuffers(buffers, delimiter = ' ') {
 	let d = Buffer.from(delimiter);
 	return buffers.reduce((prev, b) => Buffer.concat([prev, d, b]));
@@ -248,7 +250,7 @@ async function execute() {
 				packet.ip.port !== 22102 &&
 				packet.ip.port_dst !== 22101 &&
 				packet.ip.port_dst !== 22102) continue;
-			// await delay(10)
+			// await delay(20)
 			packets = await processMHYPacket(packet);
 			if (!packets) continue;
 			for (var i = 0; i < packets.length; i++) {
@@ -266,6 +268,7 @@ async function execute() {
 				packetObject = await decodePacketProto(decryptedDatagram, packet.ip);
 				// console.log.log(JSON.stringify(packetObject));
 				if (packetObject) {
+					packetObject.time = packet.time;
 					frontend.queuePacket(packetObject);
 				}
 			}
@@ -297,7 +300,8 @@ async function pcap(file) {
 				address_dst: ip.dst_addr,
 				port: udp.port_src,
 				port_dst: udp.port_dst
-			}
+			},
+			time: packet.header.timestampSeconds * 1000 + Math.floor(packet.header.timestampMicroseconds / 1000)
 		})
 	});
 
@@ -336,6 +340,12 @@ async function gcap(file) {
 	// })
 }
 
+const INTERCEPT = false;
+
+function proxyMiddleware(dir, msg, sender, peer, next) {
+	if(!INTERCEPT) next(msg, sender, peer);
+}
+
 async function startProxySession(filename, ip, port) {
 	Session = {};
 	if (!filename) filename = new Date().toISOString().replace('T', '_').replace(/:/g, '-').split('.')[0] + '.gcap';
@@ -348,6 +358,10 @@ async function startProxySession(filename, ip, port) {
 		port: port || proxyPort,
 		localaddress: '127.0.0.1',
 		localport: port || proxyPort,
+		middleware: {
+			message: (msg, sender, next) => proxyMiddleware(1, msg, sender, undefined, next),
+			proxyMsg: (msg, sender, peer, next) => proxyMiddleware(0, msg, sender, peer, next)
+		}
 	}
 	Session.proxy = proxy.createServer(opt);
 
@@ -370,7 +384,6 @@ async function startProxySession(filename, ip, port) {
 		})
 	});
 
-	// 'proxyMsg' is emitted when the bound socket gets a message and it's send back to the peer the socket was bound to
 	Session.proxy.on('proxyMsg', (packet, ip, peer) => {
 		ip.address_dst = peer.address;
 		ip.port_dst = peer.port;

@@ -61,7 +61,7 @@ function webSocket() {
             })
             packetsToSend.length = 0;
         }
-    }, 200);
+    }, 20);
 }
 
 function queuePacket(packet) {
