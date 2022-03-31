@@ -1,6 +1,8 @@
 # Iridium
 A KCP packet sniffer + visualizer in one.
 
+**No, pancake fiddler doesn't work anymore.**
+
 
 # Usage
 
