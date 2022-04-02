@@ -345,7 +345,7 @@ let node, details, filterTableHost, orand = true;
 		<div class="results-host" class:open={filter.length || JSONfilter.length}>
 			<div class="table">
 				<div class="tr thead">
-					<div class="time"></div>
+					<div class="time">Time</div>
 					<div class="idx">#</div>
 					<div class="src">Sender</div>
 					<div class="id">ID</div>
@@ -363,7 +363,7 @@ let node, details, filterTableHost, orand = true;
 		<div class="table-host">
 			<div class="table">
 				<div class="tr thead">
-					<div class="time"></div>
+					<div class="time">Time</div>
 					<div class="idx">#</div>
 					<div class="src">Sender</div>
 					<div class="id">ID</div>
