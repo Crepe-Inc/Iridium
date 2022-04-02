@@ -346,6 +346,7 @@ let node, details, filterTableHost, orand = true;
 			<div class="table">
 				<div class="tr thead">
 					<div class="time"></div>
+					<div class="idx">#</div>
 					<div class="src">Sender</div>
 					<div class="id">ID</div>
 					<div class="name">Proto Name</div>
