@@ -44,6 +44,7 @@ let packetQueueSize = 0;
 let unknownPackets = 0,
 	packetOrderCount = 0;
 let MHYKeys = require('../data/MHYkeys.json');
+const config = require('../config');
 for (let key in MHYKeys) {
 	MHYKeys[key] = Buffer.from(MHYKeys[key], 'base64');
 }
@@ -235,13 +236,14 @@ function queuePacket(packet) {
 }
 
 
-var proxyIP = '47.90.134.24';
-var proxyPort = 22101;
+var proxyIP = '47.90.135.110';
+var proxyPort = 22102;
 async function execute() {
 	async function loop () {
 		if (!packetQueueSize) return setTimeout(loop, 32);
 		let decryptedDatagram;
 		let packetObject;
+		let count = 0;
 		while (packetQueue.length) {
 			let packet = packetQueue.shift();
 			packetQueueSize--;
@@ -270,6 +272,8 @@ async function execute() {
 				if (packetObject) {
 					packetObject.time = packet.time;
 					frontend.queuePacket(packetObject);
+					dumpPacketObj(packetObject, count)
+					count ++;
 				}
 			}
 		}
@@ -281,6 +285,36 @@ async function execute() {
 		setImmediate(loop);
 	}
 	loop();
+}
+
+let namesToDump = config.ProtosToDump;
+async function dumpPacketObj(obj, count){
+	let name = obj.protoName
+	let data = obj.object
+
+
+	///yeah idk why i made this async tbf 
+
+	
+	if(!config.dumpAll) return;
+	// let namesToDump = []
+
+	if(namesToDump && namesToDump.includes(name)){
+		if(!fs.existsSync("./Bins")){
+			fs.mkdirSync("./Bins")
+		}
+		
+		fs.writeFileSync(`./Bins/${count}_${name}.json`, JSON.stringify(data, null, 4))
+		count++;
+	}else if(!namesToDump){
+		if(!fs.existsSync("./Bins")){
+			fs.mkdirSync("./Bins")
+		}
+		
+		fs.writeFileSync(`./Bins/${count}_${name}.json`, JSON.stringify(data, null, 4))
+		count++;
+	}
+
 }
 
 async function pcap(file) {

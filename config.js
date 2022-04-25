@@ -3,7 +3,7 @@ module.exports = {
 		// "QueryPathReq",
 		// "PingReq",
 		// "PingRsp",
-		"UnionCmdNotify",
+		// "UnionCmdNotify",
 		// "EvtAiSyncCombatThreatInfoNotify",
 		// "WorldPlayerRTTNotify",
 		// "QueryPathRsp",
@@ -15,7 +15,9 @@ module.exports = {
 		// "EntityConfigHashNotify",
 		// "MonsterAIConfigHashNotify",
 		// "EntityAiSyncNotify",
+		"EvtAiSyncSkillCdNotify",
 		// //currently broken packets
+
 		"TakeAchievementRewardRsp",
 		"ActivityPlayOpenAnimNotify",
 		"FurnitureCurModuleArrangeCountNotify",
@@ -30,5 +32,8 @@ module.exports = {
 		"HomeAvatarAllFinishRewardNotify",
 		"HomeBasicInfoNotify",
 		"FurnitureMakeRsp"
-	]
+	],
+	ProtosToDump:[
+	],  // add proto names here	to dump them
+	dumpAll : false, // dump all packets except ignored ones if set to true
 }

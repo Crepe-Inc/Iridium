@@ -17,6 +17,12 @@ A KCP packet sniffer + visualizer in one.
 From there, you can either start a proxy or read a .pcap file filtered with `udp.port == 22101 or udp.port == 22102`.
 Proxy captures will be saved to `captures` folder in a .gcap format and can also be read with this tool.
 
+
+# config.js
+
+	-ignoredProtos: //ignored packets
+	-ProtosToDump: // add proto names hereto dump them
+	-dumpAll : //false by default, will write all packets to json (recommended to not enable this unless you really need it)
 # Node module API for your own packets
 
 `startFrontend`: launches the frontend on http://localhost:1984/index.html

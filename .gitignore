@@ -111,3 +111,6 @@ data/proto/
 
 # User data
 captures
+
+# Bins -> just a thing i did to dump some things
+Bins/
