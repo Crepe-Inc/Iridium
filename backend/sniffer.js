@@ -238,12 +238,14 @@ function queuePacket(packet) {
 
 var proxyIP = '47.90.135.110';
 var proxyPort = 22102;
+
+let count = 0;
 async function execute() {
 	async function loop () {
 		if (!packetQueueSize) return setTimeout(loop, 32);
 		let decryptedDatagram;
 		let packetObject;
-		let count = 0;
+
 		while (packetQueue.length) {
 			let packet = packetQueue.shift();
 			packetQueueSize--;
@@ -272,7 +274,7 @@ async function execute() {
 				if (packetObject) {
 					packetObject.time = packet.time;
 					frontend.queuePacket(packetObject);
-					dumpPacketObj(packetObject, count)
+					dumpPacketObj(packetObject)
 					count ++;
 				}
 			}
@@ -288,7 +290,9 @@ async function execute() {
 }
 
 let namesToDump = config.ProtosToDump;
-async function dumpPacketObj(obj, count){
+
+async function dumpPacketObj(obj){
+	// console.log(obj)
 	let name = obj.protoName
 	let data = obj.object
 
@@ -296,17 +300,19 @@ async function dumpPacketObj(obj, count){
 	///yeah idk why i made this async tbf 
 
 	
-	if(!config.dumpAll) return;
+	if(namesToDump.length == 0) return;
 	// let namesToDump = []
 
-	if(namesToDump && namesToDump.includes(name)){
+	let count = Date.now()
+
+	if(namesToDump.includes(name)){
 		if(!fs.existsSync("./Bins")){
 			fs.mkdirSync("./Bins")
 		}
 		
 		fs.writeFileSync(`./Bins/${count}_${name}.json`, JSON.stringify(data, null, 4))
 		count++;
-	}else if(!namesToDump){
+	}else if(config.dumpAll){
 		if(!fs.existsSync("./Bins")){
 			fs.mkdirSync("./Bins")
 		}
@@ -343,35 +349,40 @@ async function pcap(file) {
 		log.log('Parse finished.')
 	});
 }
+var bsplit = require('buffer-split')
+let a = 0 
 
 async function gcap(file) {
-	// var fs = require('fs');
-	var linestream = new DelimiterStream({
-		delimiter: GCAP_DELIM
-	});
-	// var input = fs.createReadStream(file);
-	const { Readable } = require('stream');
-	const stream = Readable.from(Buffer.from(file, 'base64'));
-	// file = file.split(GCAP_DELIM);
-	linestream.on('data', packet => {
-		// console.log.log(packet)
-		ip = {};
-		if (packet.readInt8(0) == 1) {
-			ip.port_dst = 22101
-			ip.port = null
-		}else{
-			ip.port = 22101
-			ip.port_dst = null
-		}
-		queuePacket({
-			uncrypt: packet.slice(1),
-			ip
-		})
-	});
-	stream.pipe(linestream);
-	// stream.on('end', () => {
-	// 	yuankey = undefined;
-	// })
+
+	let arr = bsplit(Buffer.from(file, "base64"), Buffer.from(GCAP_DELIM))
+	
+	//iterate through the array
+	for(var i = 0; i < arr.length; i++){
+		//pass the array item to dosomething
+		let datagram = arr[i]
+		dosomething(datagram)
+	}
+	console.log(a)
+}
+function dosomething(packet){
+	ip = {};
+
+	if(packet.length < 18){
+		//invalid packet
+		a++
+		return
+	}
+	if (packet.readInt8(0) == 1) {
+		ip.port_dst = 22101
+		ip.port = null
+	}else{
+		ip.port = 22101
+		ip.port_dst = null
+	}
+	queuePacket({
+		uncrypt: packet.slice(1),
+		ip
+	})
 }
 
 const INTERCEPT = false;

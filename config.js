@@ -1,20 +1,20 @@
 module.exports = {
 	ignoredProtos: [
-		// "QueryPathReq",
-		// "PingReq",
-		// "PingRsp",
+		"QueryPathReq",
+		"PingReq",
+		"PingRsp",
 		// "UnionCmdNotify",
-		// "EvtAiSyncCombatThreatInfoNotify",
-		// "WorldPlayerRTTNotify",
-		// "QueryPathRsp",
-		// "EvtAiSyncSkillCdNotify",
-		// "SetEntityClientDataNotify",
-		// "ObstacleModifyNotify",
-		// "ClientReportNotify",
-		// "ClientAbilityInitFinishNotify",
-		// "EntityConfigHashNotify",
-		// "MonsterAIConfigHashNotify",
-		// "EntityAiSyncNotify",
+		"EvtAiSyncCombatThreatInfoNotify",
+		"WorldPlayerRTTNotify",
+		"QueryPathRsp",
+		"EvtAiSyncSkillCdNotify",
+		"SetEntityClientDataNotify",
+		"ObstacleModifyNotify",
+		"ClientReportNotify",
+		"ClientAbilityInitFinishNotify",
+		"EntityConfigHashNotify",
+		"MonsterAIConfigHashNotify",
+		"EntityAiSyncNotify",
 		"EvtAiSyncSkillCdNotify",
 		// //currently broken packets
 
@@ -34,6 +34,7 @@ module.exports = {
 		"FurnitureMakeRsp"
 	],
 	ProtosToDump:[
+		"SceneEntityAppearNotify"
 	],  // add proto names here	to dump them
 	dumpAll : false, // dump all packets except ignored ones if set to true
 }
