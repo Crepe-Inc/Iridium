@@ -1,6 +1,6 @@
 const proxy = require('udp-proxy')
 const MHYbuf = require("../util/MHYbuf");
-const kcp = require("node-kcp");
+const kcp = require("node-kcp-token");
 const fs = require("fs");
 const pcapp = require('pcap-parser');
 // const SQLiteCrud = require('sqlite3-promisify');
@@ -104,13 +104,13 @@ async function processMHYPacket(packet) {
 
 	let peerID = ip.address + '_' + ip.port + '_' + crypt.readUInt32LE(0).toString(16);
 	if (!KCPContextMap[peerID]) {
-		KCPContextMap[peerID] = new kcp.KCP(crypt.readUInt32LE(0), ip);
+		KCPContextMap[peerID] = new kcp.KCP(crypt.readUInt32LE(0),crypt.readUInt32LE(4), ip);
 		// KCPContextMap[peerID].nodelay(1, 1000, 2, 0)
 		log.log('KCP', 'Instance created: ' + peerID);
 	}
 
 	let kcpobj = KCPContextMap[peerID];
-	kcpobj.input(await MHYbuf.reformatKcpPacket(crypt))
+	kcpobj.input(crypt)
 	var hrTime = process.hrtime();
 	kcpobj.update(hrTime[0] * 1000000 + hrTime[1] / 1000);
 	kcpobj.wndsize(1024,1024);

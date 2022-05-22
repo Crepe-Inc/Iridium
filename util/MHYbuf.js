@@ -100,27 +100,6 @@ module.exports = {
 		}
 	},
 
-	async reformatKcpPacket(message) {
-		let i = 0;
-		let tokenSizeTotal = 0;
-		let messages = [];
-		while (i < message.length) {
-			let convId = message.readUInt32BE(i);
-			let remainingHeader = message.subarray(i + 8, i + 28);
-			let contentLen = message.readUInt32LE(i + 24);
-			let content = message.subarray(i + 28, i + 28 + contentLen);
-
-			let formattedMessage = Buffer.alloc(24 + contentLen);
-			formattedMessage.writeUInt32BE(convId, 0);
-			remainingHeader.copy(formattedMessage, 4);
-			content.copy(formattedMessage, 24);
-			i += 28 + contentLen;
-			tokenSizeTotal += 4;
-			messages.push(formattedMessage);
-		}
-		return Buffer.concat(messages, message.length - tokenSizeTotal);
-	},
-
 	async dataToPacket(data, packetID, keyBuffer) {
 		var magic2 = Buffer.from(0x89AB.toString(16), 'hex') // 45670005000c0000000b 18f7032801309df197eea02f10cbc4a086062566c8
 		var part1 = Buffer.alloc(10)
