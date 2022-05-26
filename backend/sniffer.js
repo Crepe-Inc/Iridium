@@ -104,7 +104,7 @@ async function processMHYPacket(packet) {
 
 	let peerID = ip.address + '_' + ip.port + '_' + crypt.readUInt32LE(0).toString(16);
 	if (!KCPContextMap[peerID]) {
-		KCPContextMap[peerID] = new kcp.KCP(crypt.readUInt32LE(0), crypt.readUInt32LE(4), ip);
+		KCPContextMap[peerID] = new kcp.KCP(crypt.readUInt32LE(0),crypt.readUInt32LE(4), ip);
 		// KCPContextMap[peerID].nodelay(1, 1000, 2, 0)
 		log.log('KCP', 'Instance created: ' + peerID);
 	}
@@ -350,33 +350,39 @@ async function pcap(file) {
 	});
 }
 var bsplit = require('buffer-split')
+let a = 0 
 
 async function gcap(file) {
 
 	let arr = bsplit(Buffer.from(file, "base64"), Buffer.from(GCAP_DELIM))
 	
+	//iterate through the array
 	for(var i = 0; i < arr.length; i++){
-
+		//pass the array item to dosomething
 		let datagram = arr[i]
-		ip = {};
-
-		if(datagram.length < 18){
-			//invalid packet
-			a++
-			return
-		}
-		if (datagram.readInt8(0) == 1) {
-			ip.port_dst = 22101
-			ip.port = null
-		}else{
-			ip.port = 22101
-			ip.port_dst = null
-		}
-		queuePacket({
-			uncrypt: datagram.slice(1),
-			ip
-		})
+		dosomething(datagram)
 	}
+	console.log(a)
+}
+function dosomething(packet){
+	ip = {};
+
+	if(packet.length < 18){
+		//invalid packet
+		a++
+		return
+	}
+	if (packet.readInt8(0) == 1) {
+		ip.port_dst = 22101
+		ip.port = null
+	}else{
+		ip.port = 22101
+		ip.port_dst = null
+	}
+	queuePacket({
+		uncrypt: packet.slice(1),
+		ip
+	})
 }
 
 const INTERCEPT = false;
