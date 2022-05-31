@@ -18,6 +18,8 @@ import { tick, onMount } from 'svelte';
 import Highlight from "svelte-highlight";
 import json from "svelte-highlight/src/languages/json";
 import materialDarker from "svelte-highlight/src/styles/material-darker";
+import { JSONEditor } from "svelte-jsoneditor";
+import "svelte-jsoneditor/themes/jse-theme-dark.css";
 
 class WSMessage {
 	constructor(cmd, data) {
@@ -164,9 +166,56 @@ function sendFile(e) {
 	}
 	reader.readAsBinaryString(file);
 }
+
+let editor, decodeEditor = true;
+let editorCss = "";
 function showPacketDetails(packet) {
 	currentPacket = packet;
+		tick().then(() => {
+			if (packet.object && packet.decode && showDecode) {
+				editorCss = "two-editor";
+			} else {
+				editorCss = "one-editor";
+			}
+			if (!packet.object && packet.decode){
+				showDecode = true;
+			}
+			if (packet.object) {
+				editor.set({ json: packet.object });
+			}
+			if (showDecode && packet.decode) {
+				decodeEditor.set({ json: packet.decode });
+			}
+		});
+
+	}
+
+let showDecode = false;
+function handleShowDecode() {
+	tick().then(() => { 
+		showDecode = !showDecode;
+		showPacketDetails(currentPacket);
+	});
+
 }
+function handleRenderMenu(mode, items) {
+	const separator = {
+		separator: true,
+	};
+	const rawDecButton = {
+		onClick: handleShowDecode,
+		text: "RD",
+		title: "Raw Decode",
+		className: "jse-button raw-decode-btn",
+	};
+
+	const space = {
+		space: true,
+	};
+	const itemsWithoutSpace = items.slice(0, items.length - 1);
+	return itemsWithoutSpace.concat([separator, rawDecButton, space]);
+}
+
 function scrollToEnd() {
 	scrollToIndex(Packets.length - 1, {behavior: 'auto'});
 	// tableHost.scrollTop = 10000000;
@@ -382,11 +431,20 @@ let node, details, filterTableHost, orand = true;
 	</div>
 	<div class="resize" on:mousedown={resizeHandler}></div>
 	<div class="details-host" bind:this={details}>
-		{#if currentPacket && currentPacket.object}
-			{#if currentPacket.packet && currentPacket.packet.length > 7000}
-				<pre>{JSON.stringify(currentPacket.object, undefined, '  ')}</pre>
-			{:else}
-				<Highlight code={JSON.stringify(currentPacket.object, undefined, '  ')} language={json}/>
+		{#if currentPacket}
+			{#if currentPacket.object}
+				<div class="{editorCss} jse-theme-dark">
+					<JSONEditor
+						bind:this={editor}
+						onRenderMenu={handleRenderMenu}
+						readOnly
+					/>
+				</div>
+			{/if}
+			{#if currentPacket.decode && showDecode}
+				<div class="{editorCss} jse-theme-dark">
+					<JSONEditor bind:this={decodeEditor} readOnly />
+				</div>
 			{/if}
 		{/if}
 	</div>
@@ -416,6 +474,7 @@ aside {
 }
 
 aside button {
+	font-size: 1.75em;
 	margin-bottom: 0.3em;
 }
 
@@ -591,5 +650,13 @@ input[type="text"] {
 	background: #1AA1E7;
 	color: white;
 }
-
+.two-editor {
+	height: 50%;
+}
+.one-editor{
+	height: 100%;
+}
+.raw-decode-btn{
+	width: 80px !important;
+}
 </style>

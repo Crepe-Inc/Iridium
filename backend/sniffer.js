@@ -52,6 +52,7 @@ let initialKey;
 let yuankey;
 var serverBound = {};
 var clientBound = {};
+const { protoRawDecode } = require('./proto_raw_decoder');
 
 async function processMHYPacket(packet) {
 	let {
@@ -219,6 +220,11 @@ async function decodePacketProto(packet, ip) {
 		o.object.cmdList = commands;
 	}
 	if(o) o.source = packetSource;
+	try{
+		o.decode = protoRawDecode(o.packet);
+	}catch(ex){
+
+	}
 	return o;
 }
 
