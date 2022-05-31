@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "postinstall": "cd frontend && npm i && npm run build && cd .. && cd node_modules && cd node-kcp && npm i && cd .. && cd ..",
+    "postinstall": "cd frontend && npm i && npm run build && cd .. && cd node_modules && cd node-kcp-token && npm i && cd .. && cd ..",
     "main": "node --stack_size=1200 . main"
   },
   "author": "Alg",
