@@ -15,6 +15,7 @@
     "chalk": "^4.1.2",
     "delimiter-stream": "^3.0.1",
     "ip-packet": "^1.1.0",
+    "jsbi": "^4.3.0",
     "node-kcp-token": "github:TheLostTree/node-kcp",
     "pcap-parser": "^0.2.1",
     "protobufjs": "^6.11.2",
