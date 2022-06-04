@@ -252,6 +252,8 @@ async function execute() {
 		let decryptedDatagram;
 		let packetObject;
 
+		let avatars;
+		let items;
 		while (packetQueue.length) {
 			let packet = packetQueue.shift();
 			packetQueueSize--;
@@ -280,11 +282,16 @@ async function execute() {
 				if (packetObject) {
 					packetObject.time = packet.time;
 					frontend.queuePacket(packetObject);
-					dumpPacketObj(packetObject)
+					dumpPacketObj(packetObject, count)
 					count ++;
+					if (packetObject.protoName == "PlayerStoreNotify")
+						items = packetObject.object;
+					if (packetObject.protoName == "AvatarDataNotify")
+						avatars = packetObject.object;
 				}
 			}
 		}
+		dumpGOOD(avatars, items);
 		if (Session.fileHandle && Session.datagrams && Session.datagrams.length > 0) {
 			await Session.fileHandle.appendFile(Buffer.concat([joinBuffers(Session.datagrams, GCAP_DELIM), Buffer.from(GCAP_DELIM)]));
 			Session.written = (Session.written || 0) + 1;
@@ -297,7 +304,14 @@ async function execute() {
 
 let namesToDump = config.ProtosToDump;
 
-async function dumpPacketObj(obj){
+async function dumpGOOD(avatars, items) {
+	let count = Date.now()
+	const goodTrans = require('../plugins/good-transform')
+	const good = goodTrans.AvatarDataNotifyAndPlayerStoreNotify(avatars, items)
+	fs.writeFileSync(`./Bins/good_${count}.json`, JSON.stringify(good))
+}
+
+async function dumpPacketObj(obj, count){
 	// console.log(obj)
 	let name = obj.protoName
 	let data = obj.object
@@ -309,20 +323,15 @@ async function dumpPacketObj(obj){
 	if(namesToDump.length == 0) return;
 	// let namesToDump = []
 
-	let count = Date.now()
+	// let count = Date.now()
+	if(!fs.existsSync("./Bins")){
+		fs.mkdirSync("./Bins")
+	}
 
 	if(namesToDump.includes(name)){
-		if(!fs.existsSync("./Bins")){
-			fs.mkdirSync("./Bins")
-		}
-		
 		fs.writeFileSync(`./Bins/${count}_${name}.json`, JSON.stringify(data, null, 4))
 		count++;
 	}else if(config.dumpAll){
-		if(!fs.existsSync("./Bins")){
-			fs.mkdirSync("./Bins")
-		}
-		
 		fs.writeFileSync(`./Bins/${count}_${name}.json`, JSON.stringify(data, null, 4))
 		count++;
 	}
