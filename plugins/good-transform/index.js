@@ -1,20 +1,17 @@
-const Materials = require('./source/MaterialExcelConfigData.json')
-const Weapons = require('./source/WeaponExcelConfigData.json')
-const EqAffix = require('./source/EquipAffixExcelConfigData.json')
-const Rel = require('./source/ReliquaryExcelConfigData.json')
-const RelSet = require('./source/ReliquarySetExcelConfigData.json')
-const RelMP = require('./source/ReliquaryMainPropExcelConfigData.json')
-const RelAffix = require('./source/ReliquaryAffixExcelConfigData.json')
-const ManualText = require('./source/ManualTextMapConfigData.json')
-const TextMap = require('./source/TextMapEN.json')
-const RelCodex = require('./source/ReliquaryCodexExcelConfigData.json')
-const Avatars = require('./source/AvatarExcelConfigData.json')
-
-const fs = require('fs');
+const Avatars = require('../../GenshinData/ExcelBinOutput/AvatarExcelConfigData.json')
+const Materials = require('../../GenshinData/ExcelBinOutput/MaterialExcelConfigData.json')
+const Weapons = require('../../GenshinData/ExcelBinOutput/WeaponExcelConfigData.json')
+const EqAffix = require('../../GenshinData/ExcelBinOutput/EquipAffixExcelConfigData.json')
+const Rel = require('../../GenshinData/ExcelBinOutput/ReliquaryExcelConfigData.json')
+const RelSet = require('../../GenshinData/ExcelBinOutput/ReliquarySetExcelConfigData.json')
+const RelMP = require('../../GenshinData/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json')
+const RelAffix = require('../../GenshinData/ExcelBinOutput/ReliquaryAffixExcelConfigData.json')
+const ManualText = require('../../GenshinData/ExcelBinOutput/ManualTextMapConfigData.json')
+const TextMap = require('../../GenshinData/TextMap/TextMapEN.json')
 
 ManualTextMap = {};
 ManualText.forEach(text => {
-    ManualTextMap[text.TextMapId] = text.TextMapContentTextMapHash;
+    ManualTextMap[text.textMapId] = text.textMapContentTextMapHash;
 })
 
 
@@ -66,11 +63,9 @@ const FRZ = {
 const G = {
     Items: {},
     EqAffix: {},
-    AffixId: {},
     RelSet: {},
     RelMP: {},
     RelAffix: {},
-    RelCodex: {},
     Avatars: {},
 };
 
@@ -81,95 +76,62 @@ Avatars.forEach((b) => {
     }
 });
 Materials.forEach((b) => {
-    let a = G.Items[b.Id] = {};
-    if (b.NameTextMapHash) {
-        a.Name = TextMap[b.NameTextMapHash]
+    let a = G.Items[b.id] = {};
+    if (b.nameTextMapHash) {
+        a.Name = TextMap[b.nameTextMapHash]
     }
-    if (b.Icon) a.Icon = b.Icon;
-    if (b.ParamList) a.ParamList = b.ParamList;
-    if (b.PropType) {
-        a.Name = TextMap[ManualTextMap[b.PropType]]
-        a.PropType = b.PropType;
-    }
-    if (b.PropValue) a.PropValue = b.PropValue;
-    if (b.DepotId) a.DepotId = b.DepotId;
-    if (b.ItemType) a.ItemType = b.ItemType;
-    if (b.SetId) a.SetId = b.SetId;
-    if (b.EquipAffixId) a.EquipAffixId = b.EquipAffixId;
+    if (b.icon) a.Icon = b.icon;
+    if (b.itemType) a.ItemType = b.itemType;
 });
 Weapons.forEach((b) => {
-    let a = G.Items[b.Id] = {};
-    if (b.NameTextMapHash) {
-        a.Name = TextMap[b.NameTextMapHash]
+    let a = G.Items[b.id] = {};
+    if (b.nameTextMapHash) {
+        a.Name = TextMap[b.nameTextMapHash]
     }
-    if (b.Icon) a.Icon = b.Icon;
-    if (b.WeaponType) a.WeaponType = b.WeaponType;
-    if (b.RankLevel) a.RankLevel = b.RankLevel;
-    if (b.SkillAffix) a.SkillAffix = b.SkillAffix;
-    if (b.ParamList) a.ParamList = b.ParamList;
+    if (b.icon) a.Icon = b.icon;
+    if (b.itemType) a.ItemType = b.itemType;
+    if (b.weaponType) a.WeaponType = b.weaponType;
+    if (b.skillAffix) a.SkillAffix = b.skillAffix;
 });
 Rel.forEach((b) => {
-    let a = G.Items[b.Id] = {};
-    if (b.NameTextMapHash) {
-        a.Name = TextMap[b.NameTextMapHash]
+    let a = G.Items[b.id] = {};
+    if (b.nameTextMapHash) {
+        a.Name = TextMap[b.nameTextMapHash]
     }
-    if (b.Icon) a.Icon = b.Icon;
-    if (b.ParamList) a.ParamList = b.ParamList;
-    if (b.ItemType) a.ItemType = b.ItemType;
-    if (b.EquipType) a.EquipType = b.EquipType;
-    if (b.SetId) a.SetId = b.SetId;
-    if (b.MaxLevel) a.MaxLevel = b.MaxLevel;
+    if (b.icon) a.Icon = b.icon;
+    if (b.itemType) a.ItemType = b.itemType;
+    if (b.equipType) a.EquipType = b.equipType;
+    if (b.maxLevel) a.MaxLevel = b.maxLevel;
+    if (b.setId) a.SetId = b.setId;
 });
 EqAffix.forEach((b) => {
-    let a = G.EqAffix[b.Id] = {};
-    if (b.NameTextMapHash) {
-        a.Name = TextMap[b.NameTextMapHash]
+    let a = G.EqAffix[b.id] = {};
+    if (b.nameTextMapHash) {
+        a.Name = TextMap[b.nameTextMapHash]
     }
-    if (b.ParamList) a.ParamList = b.ParamList;
-    if (b.AffixId) a.AffixId = b.AffixId;
-    if (b.AffixId) G.AffixId[b.AffixId] = b.Id;
+    if (b.paramList) a.ParamList = b.paramList;
+    if (b.affixId) a.AffixId = b.affixId;
 });
 RelSet.forEach((b) => {
-    let a = G.RelSet[b.SetId] = {};
-    if (b.NameTextMapHash) {
-        a.Name = TextMap[b.NameTextMapHash]
-    }
-    if (b.SetIcon) a.Icon = b.SetIcon;
+    let a = G.RelSet[b.setId] = {};
     if (b.EquipAffixId) a.EquipAffixId = b.EquipAffixId;
 });
 RelMP.forEach((b) => {
-    let a = G.RelMP[b.Id] = {};
-    if (b.PropType) {
-        a.Name = TextMap[ManualTextMap[b.PropType]]
-        a.PropType = b.PropType;
+    let a = G.RelMP[b.id] = {};
+    if (b.propType) {
+        a.Name = TextMap[ManualTextMap[b.propType]]
+        a.PropType = b.propType;
     }
 });
 RelAffix.forEach((b) => {
-    let a = G.RelAffix[b.Id] = {};
-    if (b.DepotId) a.DepotId = b.DepotId;
-    if (b.PropType) {
-        a.Name = TextMap[ManualTextMap[b.PropType]]
-        a.PropType = b.PropType;
+    let a = G.RelAffix[b.id] = {};
+    if (b.depotId) a.DepotId = b.depotId;
+    if (b.propType) {
+        a.Name = TextMap[ManualTextMap[b.propType]]
+        a.PropType = b.propType;
     }
-    if (b.PropValue) a.PropValue = b.PropValue;
+    if (b.propValue) a.PropValue = b.propValue;
 });
-RelCodex.forEach((b) => {
-    G.RelCodex[b.SuitId] ||= {}
-    G.RelCodex[b.SuitId][b.Level] = b.SortOrder
-})
-
-function cmp(v1, v2) {
-    if (v1 < v2) throw 1
-    else if (v1 > v2) throw -1
-}
-
-const SlotPrior = {
-    EQUIP_BRACER: 4,
-    EQUIP_NECKLACE: 3,
-    EQUIP_SHOES: 2,
-    EQUIP_RING: 1,
-    EQUIP_DRESS: 0,
-}
 
 module.exports = {
     AvatarDataNotifyAndPlayerStoreNotify(avatars, items) {
@@ -208,27 +170,6 @@ module.exports = {
             }).filter(_ => _)
         GOOD.artifacts = Store.itemList
             .filter(item => item.equip && item.equip.reliquary)
-            .sort((r1, r2) => {
-                try {
-                    let i1 = G.Items[r1.itemId],
-                        i2 = G.Items[r2.itemId]
-                    // rarity
-                    cmp(i1.MaxLevel, i2.MaxLevel)
-                    // level
-                    cmp(r1.equip.reliquary.level, r2.equip.reliquary.level)
-                    // setKey
-                    cmp(G.RelCodex[i1.SetId][FRZ.rarities[i1.MaxLevel]], G.RelCodex[i2.SetId][FRZ.rarities[i2.MaxLevel]])
-                    // slotKey
-                    cmp(SlotPrior[i1.EquipType], SlotPrior[i2.EquipType])
-                    // substats length
-                    cmp(r1.equip.reliquary.appendPropIdList.length, r2.equip.reliquary.appendPropIdList.length)
-                    // guid
-                    cmp(r1.guid, r2.guid)
-                    return 0
-                } catch (retcode) {
-                    return retcode
-                }
-            })
             .map(item => {
                 let reference = G.Items[item.itemId];
                 if (!reference) {
@@ -282,10 +223,7 @@ module.exports = {
                     g.key = FRZ.goodize(item.Name);
                     g.level = item.equip.weapon.level;
                     g.ascension = item.equip.weapon.promoteLevel;
-                    let refinement = 0;
-                    if (reference.SkillAffix[0] != 0)
-                        refinement = item.equip.weapon.affixMap[G.AffixId[G.EqAffix[reference.SkillAffix[0]].AffixId]];
-                    g.refinement = refinement + 1;
+                    g.refinement = (Object.entries(item.equip.weapon.affixMap)[0] != null ? Object.entries(item.equip.weapon.affixMap)[0][1] : 0) + 1;
                     g.location = guidMap[item.guid] || '';
                     g.lock = item.equip.isLocked;
                     return g;

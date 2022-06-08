@@ -308,7 +308,7 @@ async function dumpGOOD(avatars, items) {
 	let count = Date.now()
 	const goodTrans = require('../plugins/good-transform')
 	const good = goodTrans.AvatarDataNotifyAndPlayerStoreNotify(avatars, items)
-	fs.writeFileSync(`./Bins/good_${count}.json`, JSON.stringify(good))
+	fs.writeFileSync(`./Bins/good_${count}.json`, JSON.stringify(good, null, 4))
 }
 
 async function dumpPacketObj(obj, count){
