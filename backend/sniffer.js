@@ -470,9 +470,32 @@ async function updateProxyIP(ip, port) {
 	console.log
 }
 
+async function startPacketCapture(){
+	const wd=require("windivert")
+	const filterStr = "udp.DstPort == 22101 or udp.DstPort == 22102 or udp.SrcPort == 22101 or udp.SrcPort == 22102"
+	log.start(`AutoCapture started by filter:"${filterStr}"`);
+	wd.listen(filterStr, function (data, inbound) {
+		let udp = MHYbuf.read_pcap_udp_header(data);
+		let ip = MHYbuf.read_pcap_ipv4_header(data);
+		let packet = {
+			crypt: Buffer.from(data.slice(28)),
+			ip: {
+				address: ip.src_addr,
+				address_dst: ip.dst_addr,
+				port: udp.port_src,
+				port_dst: udp.port_dst
+			},
+			time: new Date().valueOf()
+		}
+
+		queuePacket(packet);
+	});
+}
+
 module.exports = {
 	execute,
 	pcap, gcap,
 	startProxySession, stopProxySession, getSessionStatus,updateProxyIP,
-	queuePacket
+	queuePacket,
+	startPacketCapture
 }

@@ -23,6 +23,7 @@ Proxy captures will be saved to `captures` folder in a .gcap format and can also
 	-ignoredProtos: //ignored packets
 	-ProtosToDump: // add proto names hereto dump them
 	-dumpAll : //false by default, will write all packets to json (recommended to not enable this unless you really need it)
+	-enableAutoCapture: //false by default, auto capture network packet ,required administrator privilege, only works on windows platform
 # Node module API for your own packets
 
 `startFrontend`: launches the frontend on http://localhost:1984/index.html

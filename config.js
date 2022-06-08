@@ -36,5 +36,6 @@ module.exports = {
 	ProtosToDump:[
 		"SceneEntityAppearNotify"
 	],  // add proto names here	to dump them
-	dumpAll : false, // dump all packets except ignored ones if set to true
+	dumpAll : false, // dump all packets except ignored ones if set to true,
+	enableAutoCapture: false, // auto capture network packet ,required administrator privilege, only works on windows platform
 }

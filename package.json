@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "postinstall": "cd frontend && npm i && npm run build && cd .. && cd node_modules && cd node-kcp-token && npm i && cd .. && cd ..",
+    "postinstall": "cd frontend && npm i && npm run build && cd .. && cd node_modules && cd node-kcp-token && npm i && cd ..  && cd windivert && npm i && cd.. && cd ..",
     "main": "node --stack_size=1200 . main"
   },
   "author": "Alg",
@@ -21,6 +21,7 @@
     "protobufjs": "^6.11.2",
     "udp-packet": "^2.0.0",
     "udp-proxy": "^1.2.0",
+    "windivert": "^1.0.0",
     "ws": "^8.4.2"
   }
 }
