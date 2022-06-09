@@ -252,8 +252,8 @@ async function execute() {
 		let decryptedDatagram;
 		let packetObject;
 
-		let avatars;
-		let items;
+		let avatars = null;
+		let items = null;
 		while (packetQueue.length) {
 			let packet = packetQueue.shift();
 			packetQueueSize--;
@@ -291,7 +291,8 @@ async function execute() {
 				}
 			}
 		}
-		dumpGOOD(avatars, items);
+		if (avatars && items)
+			dumpGOOD(avatars, items);
 		if (Session.fileHandle && Session.datagrams && Session.datagrams.length > 0) {
 			await Session.fileHandle.appendFile(Buffer.concat([joinBuffers(Session.datagrams, GCAP_DELIM), Buffer.from(GCAP_DELIM)]));
 			Session.written = (Session.written || 0) + 1;
