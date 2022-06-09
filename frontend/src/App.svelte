@@ -1,6 +1,7 @@
 <script>
 let sessionType = '';
 let sessionStarted = false;
+let captureStarted = false;
 let currentPacket;
 let tableHost;
 let fileForm;
@@ -104,6 +105,7 @@ function connect() {
 		switch (packet.cmd) {
 			case 'ConnectRsp':
 				sessionStarted = packet.data.sessionStarted;
+				captureStarted = packet.data.captureStarted;
 				break;
 			case 'PacketNotify':
 				let lastIndex = Packets[Packets.length - 1]?.index || 0;
@@ -133,6 +135,12 @@ function connect() {
 			case 'StopProxyRsp':
 				sessionStarted = false;
 				break;
+			case 'StartCaptureRsp':
+				captureStarted = true;
+				break;
+			case 'StopCaptureRsp':
+				captureStarted = false;
+				break;
 			case 'FindIdRsp':
 				packet.data.forEach(d => {
 					if(d.name === 'TextMap') return console.log(d.json);
@@ -147,6 +155,13 @@ function startSession() {
 }
 function stopSession() {
 	new WSMessage('StopProxyReq', '').send();
+}
+
+function startCapture() {
+	new WSMessage('StartCaptureReq', '').send();
+}
+function stopCapture() {
+	new WSMessage('StopCaptureReq', '').send();
 }
 
 function uploadFile() {
@@ -364,8 +379,14 @@ let node, details, filterTableHost, orand = true;
 	{:else}
 		<button title="Start UDP" data-icon="play-network-outline" on:click={startSession} class="green"></button>
 	{/if}
+	{#if captureStarted}
+		<button title="Stop Capture" data-icon="network-off-outline" on:click={stopCapture} class="red"></button>
+	{:else}
+		<button title="Start Capture" data-icon="play-network-outline" on:click={startCapture} class="cyan"></button>
+	{/if}
 	<button title="Upload PCAP/GCAP" data-icon="open-in-app" on:click={uploadFile}></button>
 	<input hidden type="file" bind:this={fileForm} accept=".gcap,.pcap" />
+
 	<button title="Clear" data-icon="clear" class="red" on:click={clear}></button>
 	<button title="Lock scroll at the bottom" data-icon="keyboard_arrow_down" style="margin-top: auto;" class:green={stick} on:click={() => stick = !stick}></button>
 	{#if currentPacket}

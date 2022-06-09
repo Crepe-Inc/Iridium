@@ -18,6 +18,7 @@ const chalk = require('chalk');
 let Session = {
 	//filename
 	//proxy
+	//captureHandle
 }
 const frontend = require('./frontend-server')
 const MT19937_64 = require("../util/mt64");
@@ -471,10 +472,13 @@ async function updateProxyIP(ip, port) {
 }
 
 async function startPacketCapture(){
+	if (Session.captureHandle) {
+		return
+	}
 	const wd=require("windivert")
 	const filterStr = "udp.DstPort == 22101 or udp.DstPort == 22102 or udp.SrcPort == 22101 or udp.SrcPort == 22102"
 	log.start(`AutoCapture started by filter:"${filterStr}"`);
-	wd.listen(filterStr, function (data, inbound) {
+	Session.captureHandle = wd.listen(filterStr, function (data, inbound) {
 		let udp = MHYbuf.read_pcap_udp_header(data);
 		let ip = MHYbuf.read_pcap_ipv4_header(data);
 		let packet = {
@@ -489,7 +493,25 @@ async function startPacketCapture(){
 		}
 
 		queuePacket(packet);
-	});
+	},false);
+}
+
+async function stopPacketCapture(){
+	if (!Session.captureHandle) {
+		return;
+	}
+	log.stop(`AutoCapture stopped`);
+	try{
+		Session.captureHandle.close();
+		Session.captureHandle = null;
+	}catch(err){
+		console.log(err)
+	}
+
+}
+
+function getCaptureStatus() {
+	return !!Session.captureHandle;
 }
 
 module.exports = {
@@ -497,5 +519,5 @@ module.exports = {
 	pcap, gcap,
 	startProxySession, stopProxySession, getSessionStatus,updateProxyIP,
 	queuePacket,
-	startPacketCapture
+	startPacketCapture,stopPacketCapture, getCaptureStatus
 }
