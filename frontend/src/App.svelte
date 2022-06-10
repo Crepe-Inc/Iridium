@@ -2,6 +2,7 @@
 let sessionType = '';
 let sessionStarted = false;
 let captureStarted = false;
+let captureParameters;
 let currentPacket;
 let tableHost;
 let fileForm;
@@ -13,6 +14,7 @@ let ws;
 let scrollToIndex = () => {};
 let scrollToIndexFilter = () => {};
 let endIndex, filterEndIndex;
+let selectDev;
 import VirtualList from 'svelte-virtual-list-ce';
 import Packet from './Packet.svelte';
 import { tick, onMount } from 'svelte';
@@ -106,6 +108,7 @@ function connect() {
 			case 'ConnectRsp':
 				sessionStarted = packet.data.sessionStarted;
 				captureStarted = packet.data.captureStarted;
+				captureParameters = packet.data.captureParameters; 
 				break;
 			case 'PacketNotify':
 				let lastIndex = Packets[Packets.length - 1]?.index || 0;
@@ -158,7 +161,14 @@ function stopSession() {
 }
 
 function startCapture() {
-	new WSMessage('StartCaptureReq', '').send();
+	if(captureParameters.type === "pcap"){
+		document.getElementById("capDialog").showModal();
+	}else{
+		new WSMessage('StartCaptureReq', {}).send();
+	}
+}
+function startCaptureConfirm(dev) {
+	new WSMessage('StartCaptureReq', {device:dev}).send();
 }
 function stopCapture() {
 	new WSMessage('StopCaptureReq', '').send();
@@ -379,10 +389,12 @@ let node, details, filterTableHost, orand = true;
 	{:else}
 		<button title="Start UDP" data-icon="play-network-outline" on:click={startSession} class="green"></button>
 	{/if}
-	{#if captureStarted}
-		<button title="Stop Capture" data-icon="network-off-outline" on:click={stopCapture} class="red"></button>
-	{:else}
-		<button title="Start Capture" data-icon="play-network-outline" on:click={startCapture} class="cyan"></button>
+	{#if captureParameters && captureParameters.type}
+		{#if captureStarted}
+			<button title="Stop Capture" data-icon="network-off-outline" on:click={stopCapture} class="red"></button>
+		{:else}
+			<button title="Start Capture" data-icon="play-network-outline" on:click={startCapture} class="cyan"></button>
+		{/if}
 	{/if}
 	<button title="Upload PCAP/GCAP" data-icon="open-in-app" on:click={uploadFile}></button>
 	<input hidden type="file" bind:this={fileForm} accept=".gcap,.pcap" />
@@ -470,7 +482,24 @@ let node, details, filterTableHost, orand = true;
 		{/if}
 	</div>
 </main>
-
+{#if captureParameters.type == "pcap"}
+<dialog id="capDialog">
+	<form method="dialog">
+	  <p><label>Capture Device:
+		<select bind:value={selectDev}>
+			<option value="">Choose...</option>
+		{#each captureParameters.devices as dev}		  
+		  	<option value={dev.addr}>[{dev.addr}] - {dev.name}</option>
+	  	{/each}
+		</select>
+	  </label></p>
+	  <div class="actions">
+		<button disabled={!selectDev} on:click={()=>startCaptureConfirm(selectDev)}>Confirm</button>
+		<button class="cancel">Cancel</button>
+	  </div>
+	</form>
+  </dialog>
+{/if}
 <style>
 .resize {
 	/*position: absolute;*/
@@ -679,5 +708,30 @@ input[type="text"] {
 }
 .raw-decode-btn{
 	width: 80px !important;
+}
+
+#capDialog {
+	padding: 20px;
+	background-color: aliceblue;
+}
+#capDialog .actions{
+	margin: 20px 0 0 0;
+	display: flex;
+    justify-content: flex-end;
+}
+#capDialog .actions button{
+	margin:  0 10px;
+	color: white;
+}
+
+#capDialog .actions button.cancel{
+	background-color: darkred;
+}
+#capDialog .actions button[disabled]{
+	background-color: gray;
+	cursor: not-allowed;
+}
+#capDialog .actions button[disabled]:hover{
+	background-color: gray;
 }
 </style>

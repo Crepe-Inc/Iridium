@@ -4,15 +4,11 @@ const httpDispatch = require('./backend/http-dispatch');
 const frontend = require('./backend/frontend-server');
 const sniffer = require('./backend/sniffer');
 const { exec } = require('child_process');
-const config = require('./config');
 
 if(process.argv[2] == 'main') {
 	sniffer.execute();
 	httpDispatch.execute();
 	frontend.execute();
-	if(config.enableAutoCapture){
-		sniffer.startPacketCapture();
-	}
 	try{
 		const E = require('./backend/excelPivot');
 	}catch(e) {
@@ -29,6 +25,7 @@ if(process.argv[2] == 'main') {
 	async function cleanup() {
 		console.log('Exiting cleanly...')
 		await sniffer.stopProxySession();
+		await sniffer.stopPacketCapture();
 	}
 
 	process.on('exit', cleanup);

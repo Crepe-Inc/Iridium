@@ -3,7 +3,8 @@ const sniffer = require('../../backend/sniffer');
 async function execute() {
     return {
         sessionStarted: sniffer.getSessionStatus(),
-        captureStarted: sniffer.getCaptureStatus()
+        captureStarted: sniffer.getCaptureStatus(),
+        captureParameters: sniffer.getCaptureParameters(),
     }
 }
 

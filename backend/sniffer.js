@@ -471,47 +471,60 @@ async function updateProxyIP(ip, port) {
 	console.log
 }
 
-async function startPacketCapture(){
-	if (Session.captureHandle) {
-		return
-	}
-	const wd=require("windivert")
-	const filterStr = "udp.DstPort == 22101 or udp.DstPort == 22102 or udp.SrcPort == 22101 or udp.SrcPort == 22102"
-	log.start(`AutoCapture started by filter:"${filterStr}"`);
-	Session.captureHandle = wd.listen(filterStr, function (data, inbound) {
-		let udp = MHYbuf.read_pcap_udp_header(data);
-		let ip = MHYbuf.read_pcap_ipv4_header(data);
-		let packet = {
-			crypt: Buffer.from(data.slice(28)),
-			ip: {
-				address: ip.src_addr,
-				address_dst: ip.dst_addr,
-				port: udp.port_src,
-				port_dst: udp.port_dst
-			},
-			time: new Date().valueOf()
-		}
 
+function getCap(){
+	const mode = config.captureMode || "pcap"
+	const dummy={
+		getCaptureParameters:()=>undefined,
+		startPacketCapture:()=>undefined,
+		stopPacketCapture:()=>undefined,
+	}
+	try{
+		switch(mode){
+			case "pcap":
+				return require('./capture_pcap');
+			case "windivert":
+				return require('./capture_windivert');
+			case "none":
+				return dummy;
+			default:
+				throw new Error(`unknown capture mode: ${mode}`);
+		}
+	}catch(err){
+		log.error(err.message);
+		return dummy;
+	}	
+}
+
+async function startPacketCapture(options){
+	if (Session.captureHandle) {
+		return;
+	}
+	log.start(`Capture started`);
+	Session.captureHandle = getCap().startCapture(options,packet=>{
 		queuePacket(packet);
-	},false);
+	})
 }
 
 async function stopPacketCapture(){
 	if (!Session.captureHandle) {
 		return;
 	}
-	log.stop(`AutoCapture stopped`);
+	log.stop(`Capture stopped`);
 	try{
-		Session.captureHandle.close();
+		Session.captureHandle();
 		Session.captureHandle = null;
 	}catch(err){
-		console.log(err)
+		console.error(err);
 	}
-
 }
 
 function getCaptureStatus() {
 	return !!Session.captureHandle;
+}
+
+function getCaptureParameters(){
+	return getCap().getCaptureParameters();	
 }
 
 module.exports = {
@@ -519,5 +532,5 @@ module.exports = {
 	pcap, gcap,
 	startProxySession, stopProxySession, getSessionStatus,updateProxyIP,
 	queuePacket,
-	startPacketCapture,stopPacketCapture, getCaptureStatus
+	startPacketCapture,stopPacketCapture, getCaptureStatus,getCaptureParameters
 }

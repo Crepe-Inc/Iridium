@@ -1,7 +1,7 @@
 const sniffer = require('../../backend/sniffer');
 
-async function execute() {
-    sniffer.startPacketCapture();
+async function execute(cmd,data) {
+    sniffer.startPacketCapture(data);
     return 1;
 }
 
