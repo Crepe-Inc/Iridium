@@ -20,7 +20,20 @@ import json from "svelte-highlight/src/languages/json";
 import materialDarker from "svelte-highlight/src/styles/material-darker";
 import { JSONEditor } from "svelte-jsoneditor";
 import "svelte-jsoneditor/themes/jse-theme-dark.css";
-
+import JSONbig from 'json-bigint';
+var jffson = '{ "value" : 9223372036854775807, "v2": 123 }';
+console.log('Input:', jffson);
+console.log('');
+ 
+console.log('node.js built-in JSON:');
+var r = JSON.parse(jffson);
+console.log('JSON.parse(input).value : ', r.value.toString());
+console.log('JSON.stringify(JSON.parse(input)):', JSON.stringify(r));
+ 
+console.log('\n\nbig number JSON:');
+var r1 = JSONbig.parse(jffson);
+console.log('JSONbig.parse(input).value : ', r1.value.toString());
+console.log('JSONbig.stringify(JSONbig.parse(input)):', JSONbig.stringify(r1));
 class WSMessage {
 	constructor(cmd, data) {
 		this.cmd = cmd;
@@ -96,7 +109,7 @@ function connect() {
 	ws.onmessage = async (e) => {
 		let packet;
 		try{
-			packet = JSON.parse(e.data);
+			packet = JSONbig.parse(e.data);
 		}catch(e){
 			return console.log(e.data);
 		}
@@ -106,9 +119,11 @@ function connect() {
 				sessionStarted = packet.data.sessionStarted;
 				break;
 			case 'PacketNotify':
+			
 				let lastIndex = Packets[Packets.length - 1]?.index || 0;
 				let data = packet.data.map((pck, idx) => {
 					pck.index = idx + 1 + lastIndex;
+					console.log(pck)
 					return pck;
 				});
 				const p = Packets.concat(data);

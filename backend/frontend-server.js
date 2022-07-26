@@ -74,7 +74,7 @@ module.exports = {
         http.createServer({}, requestListener).listen(1984, () => {
             log.start('Frontend running on http://localhost:1984/index.html')
         });
-        webSocket();
+        //webSocket();
     },
     queuePacket
 }

@@ -6,6 +6,38 @@ const sniffer = require('./backend/sniffer');
 const { exec } = require('child_process');
 
 if(process.argv[2] == 'main') {
+	// sniffer.execute();
+	// httpDispatch.execute();
+	frontend.execute();
+	try{
+		const E = require('./backend/excelPivot');
+	}catch(e) {
+		console.error('                 Excels missing; skipping');
+	}
+	// exec('start http://localhost:1984/index.html');
+
+	if (!fs.existsSync('captures')) {
+		fs.mkdirSync('captures', {
+			recursive: true
+		});
+	}
+
+	async function cleanup() {
+		console.log('Exiting cleanly...')
+		await sniffer.stopProxySession();
+	}
+
+	process.on('exit', cleanup);
+	process.on('SIGUSR1', cleanup);
+	process.on('SIGUSR2', cleanup);
+	process.on('SIGTERM', cleanup);
+	// process.on('uncaughtException', cleanup);
+	process.on('SIGINT', () => {
+		// cleanup();
+		process.exit();
+	});
+}
+if(process.argv[2] == 'old') {
 	sniffer.execute();
 	httpDispatch.execute();
 	frontend.execute();
@@ -37,6 +69,7 @@ if(process.argv[2] == 'main') {
 		process.exit();
 	});
 }
+
 
 module.exports = {
 	startFrontend: () => {

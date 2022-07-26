@@ -1,0 +1,1605 @@
+[
+  {
+    "configId": 92189,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 485001,
+    "groupId": 133104485,
+    "monsterId": 20010201,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 511004,
+    "groupId": 133104511,
+    "monsterId": 21011001,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511006,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511003,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511002,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511005,
+    "groupId": 133104511,
+    "monsterId": 20011301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511001,
+    "groupId": 133104511,
+    "monsterId": 21030401,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 71,
+    "groupId": 133104031,
+    "monsterId": 24010101,
+    "blockId": 3104,
+    "level": 85
+  },
+  {
+    "configId": 92030,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 293006,
+    "groupId": 133104293,
+    "monsterId": 21011001,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 293005,
+    "groupId": 133104293,
+    "monsterId": 21011001,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 293001,
+    "groupId": 133104293,
+    "monsterId": 21030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 293004,
+    "groupId": 133104293,
+    "monsterId": 21010301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92101,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92102,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92032,
+    "groupId": 133104092,
+    "monsterId": 28020301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 250,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 249,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 250,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 249,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 250,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 249,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 250,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 249,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 250,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 249,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92030,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92032,
+    "groupId": 133104092,
+    "monsterId": 28020301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92030,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 511007,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511008,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511009,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 92032,
+    "groupId": 133104092,
+    "monsterId": 28020301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92101,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92102,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92101,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92102,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92030,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92032,
+    "groupId": 133104092,
+    "monsterId": 28020301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92030,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 92032,
+    "groupId": 133104092,
+    "monsterId": 28020301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 250,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 249,
+    "groupId": 133104095,
+    "monsterId": 21010901,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 370001,
+    "groupId": 133104370,
+    "monsterId": 28050201,
+    "blockId": 3104,
+    "level": 91
+  },
+  {
+    "configId": 290004,
+    "groupId": 133104290,
+    "monsterId": 25010301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 292002,
+    "groupId": 133104292,
+    "monsterId": 21010101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 292001,
+    "groupId": 133104292,
+    "monsterId": 21010101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 632001,
+    "groupId": 133104632,
+    "monsterId": 22010301,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 197001,
+    "groupId": 133104197,
+    "monsterId": 28050102,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 61001,
+    "groupId": 133101061,
+    "monsterId": 21010201,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 61010,
+    "groupId": 133101061,
+    "monsterId": 21020501,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 61012,
+    "groupId": 133101061,
+    "monsterId": 21011201,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 61004,
+    "groupId": 133101061,
+    "monsterId": 21011001,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 130001,
+    "groupId": 133101130,
+    "monsterId": 21010901,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 130009,
+    "groupId": 133101130,
+    "monsterId": 21010701,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 98024,
+    "groupId": 133101098,
+    "monsterId": 21010601,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 98001,
+    "groupId": 133101098,
+    "monsterId": 21020201,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 130002,
+    "groupId": 133101130,
+    "monsterId": 21011001,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 132005,
+    "groupId": 133101132,
+    "monsterId": 21030401,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 132001,
+    "groupId": 133101132,
+    "monsterId": 21011001,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 132004,
+    "groupId": 133101132,
+    "monsterId": 21010901,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 98025,
+    "groupId": 133101098,
+    "monsterId": 21030301,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 98003,
+    "groupId": 133101098,
+    "monsterId": 21011001,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 98004,
+    "groupId": 133101098,
+    "monsterId": 21010601,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 137001,
+    "groupId": 133101137,
+    "monsterId": 25030201,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 72006,
+    "groupId": 133101072,
+    "monsterId": 25030201,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72001,
+    "groupId": 133101072,
+    "monsterId": 25010401,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72008,
+    "groupId": 133101072,
+    "monsterId": 25010201,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72004,
+    "groupId": 133101072,
+    "monsterId": 25010201,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72005,
+    "groupId": 133101072,
+    "monsterId": 25010501,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 62,
+    "groupId": 133103073,
+    "monsterId": 24010101,
+    "blockId": 3103,
+    "level": 87
+  },
+  {
+    "configId": 101003,
+    "groupId": 133101101,
+    "monsterId": 28030404,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 101002,
+    "groupId": 133101101,
+    "monsterId": 28030404,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 101001,
+    "groupId": 133101101,
+    "monsterId": 28030404,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 72006,
+    "groupId": 133101072,
+    "monsterId": 25030201,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72001,
+    "groupId": 133101072,
+    "monsterId": 25010401,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72008,
+    "groupId": 133101072,
+    "monsterId": 25010201,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72004,
+    "groupId": 133101072,
+    "monsterId": 25010201,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 72005,
+    "groupId": 133101072,
+    "monsterId": 25010501,
+    "blockId": 3101,
+    "level": 89
+  },
+  {
+    "configId": 61004,
+    "groupId": 133101061,
+    "monsterId": 21011001,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 130009,
+    "groupId": 133101130,
+    "monsterId": 21010701,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 61004,
+    "groupId": 133101061,
+    "monsterId": 21011001,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 130009,
+    "groupId": 133101130,
+    "monsterId": 21010701,
+    "blockId": 3101,
+    "level": 88
+  },
+  {
+    "configId": 101003,
+    "groupId": 133101101,
+    "monsterId": 28030404,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 101002,
+    "groupId": 133101101,
+    "monsterId": 28030404,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 101001,
+    "groupId": 133101101,
+    "monsterId": 28030404,
+    "blockId": 3101,
+    "level": 87
+  },
+  {
+    "configId": 98023,
+    "groupId": 133101098,
+    "monsterId": 21020301,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 98005,
+    "groupId": 133101098,
+    "monsterId": 21010601,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 98006,
+    "groupId": 133101098,
+    "monsterId": 21010601,
+    "blockId": 3101,
+    "level": 82
+  },
+  {
+    "configId": 105,
+    "groupId": 133105111,
+    "monsterId": 21020201,
+    "blockId": 3105,
+    "level": 86
+  },
+  {
+    "configId": 300,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 301,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 211,
+    "groupId": 133105126,
+    "monsterId": 20011401,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 210,
+    "groupId": 133105126,
+    "monsterId": 20011401,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 209,
+    "groupId": 133105126,
+    "monsterId": 20011401,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 186,
+    "groupId": 133105148,
+    "monsterId": 21030201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 187,
+    "groupId": 133105148,
+    "monsterId": 21010501,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 298,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 212,
+    "groupId": 133105127,
+    "monsterId": 20010201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 208,
+    "groupId": 133105126,
+    "monsterId": 21010101,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 209001,
+    "groupId": 133105209,
+    "monsterId": 26060101,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 209002,
+    "groupId": 133105209,
+    "monsterId": 26060101,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 209003,
+    "groupId": 133105209,
+    "monsterId": 26060101,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 296,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 158019,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 158018,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 268002,
+    "groupId": 133105268,
+    "monsterId": 20011501,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 268005,
+    "groupId": 133105268,
+    "monsterId": 20011401,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 239,
+    "groupId": 133105127,
+    "monsterId": 20010201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 206,
+    "groupId": 133105116,
+    "monsterId": 24010101,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 302,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 806002,
+    "groupId": 133105806,
+    "monsterId": 28020201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 114,
+    "groupId": 133105042,
+    "monsterId": 23010301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 8,
+    "groupId": 133105112,
+    "monsterId": 21011001,
+    "blockId": 3105,
+    "level": 85
+  },
+  {
+    "configId": 806007,
+    "groupId": 133105806,
+    "monsterId": 28020201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 199003,
+    "groupId": 133105199,
+    "monsterId": 28030402,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 199002,
+    "groupId": 133105199,
+    "monsterId": 28030402,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 158018,
+    "groupId": 133105158,
+    "monsterId": 28020301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 229,
+    "groupId": 133105131,
+    "monsterId": 21010201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 217,
+    "groupId": 133105131,
+    "monsterId": 21010301,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 228,
+    "groupId": 133105131,
+    "monsterId": 21010201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 245001,
+    "groupId": 133105245,
+    "monsterId": 23030101,
+    "blockId": 3105,
+    "level": 86
+  },
+  {
+    "configId": 231,
+    "groupId": 133105131,
+    "monsterId": 21010601,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 230,
+    "groupId": 133105131,
+    "monsterId": 21010201,
+    "blockId": 3105,
+    "level": 87
+  },
+  {
+    "configId": 564020,
+    "groupId": 133102564,
+    "monsterId": 21010301,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564021,
+    "groupId": 133102564,
+    "monsterId": 21010301,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564022,
+    "groupId": 133102564,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564023,
+    "groupId": 133102564,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564002,
+    "groupId": 133102564,
+    "monsterId": 21020201,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564024,
+    "groupId": 133102564,
+    "monsterId": 21011201,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564025,
+    "groupId": 133102564,
+    "monsterId": 21011201,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 245001,
+    "groupId": 133105245,
+    "monsterId": 23030101,
+    "blockId": 3105,
+    "level": 86
+  },
+  {
+    "configId": 564001,
+    "groupId": 133102564,
+    "monsterId": 21011001,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564003,
+    "groupId": 133102564,
+    "monsterId": 21011001,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564004,
+    "groupId": 133102564,
+    "monsterId": 21010601,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 564026,
+    "groupId": 133102564,
+    "monsterId": 21010601,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 245001,
+    "groupId": 133105245,
+    "monsterId": 23030101,
+    "blockId": 3105,
+    "level": 86
+  },
+  {
+    "configId": 245001,
+    "groupId": 133105245,
+    "monsterId": 23030101,
+    "blockId": 3105,
+    "level": 86
+  },
+  {
+    "configId": 245001,
+    "groupId": 133105245,
+    "monsterId": 23030101,
+    "blockId": 3105,
+    "level": 86
+  },
+  {
+    "configId": 272002,
+    "groupId": 133102272,
+    "monsterId": 21030201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 495,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 494,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 324,
+    "groupId": 133102073,
+    "monsterId": 21010301,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 318,
+    "groupId": 133102073,
+    "monsterId": 21010501,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 315,
+    "groupId": 133102073,
+    "monsterId": 21011201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 314,
+    "groupId": 133102073,
+    "monsterId": 21020301,
+    "blockId": 3102,
+    "level": 84
+  },
+  {
+    "configId": 316006,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316005,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316004,
+    "groupId": 133102316,
+    "monsterId": 21030101,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 272002,
+    "groupId": 133102272,
+    "monsterId": 21030201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 495,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 494,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 802056,
+    "groupId": 133102802,
+    "monsterId": 28030101,
+    "blockId": 3102,
+    "level": 75
+  },
+  {
+    "configId": 901001,
+    "groupId": 133104901,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 901002,
+    "groupId": 133104901,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 901003,
+    "groupId": 133104901,
+    "monsterId": 21010701,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 901004,
+    "groupId": 133104901,
+    "monsterId": 21030201,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 901005,
+    "groupId": 133104901,
+    "monsterId": 21020101,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 901007,
+    "groupId": 133104901,
+    "monsterId": 21020101,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 901008,
+    "groupId": 133104901,
+    "monsterId": 21030101,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 316006,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316005,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316004,
+    "groupId": 133102316,
+    "monsterId": 21030101,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 901010,
+    "groupId": 133104901,
+    "monsterId": 24010201,
+    "blockId": 3104,
+    "level": 83
+  },
+  {
+    "configId": 316006,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316005,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316004,
+    "groupId": 133102316,
+    "monsterId": 21030101,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 253001,
+    "groupId": 133102253,
+    "monsterId": 21010401,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 316006,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316005,
+    "groupId": 133102316,
+    "monsterId": 21010901,
+    "blockId": 3102,
+    "level": 82
+  },
+  {
+    "configId": 316004,
+    "groupId": 133102316,
+    "monsterId": 21030101,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 272002,
+    "groupId": 133102272,
+    "monsterId": 21030201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 495,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 494,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 253001,
+    "groupId": 133102253,
+    "monsterId": 21010401,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 272002,
+    "groupId": 133102272,
+    "monsterId": 21030201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 495,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 494,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 253001,
+    "groupId": 133102253,
+    "monsterId": 21010401,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 272002,
+    "groupId": 133102272,
+    "monsterId": 21030201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 495,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 494,
+    "groupId": 133102272,
+    "monsterId": 21010201,
+    "blockId": 3102,
+    "level": 83
+  },
+  {
+    "configId": 760,
+    "groupId": 133004267,
+    "monsterId": 28020402,
+    "blockId": 3004,
+    "level": 75
+  },
+  {
+    "configId": 754,
+    "groupId": 133004267,
+    "monsterId": 28020402,
+    "blockId": 3004,
+    "level": 75
+  },
+  {
+    "configId": 14006,
+    "groupId": 133004014,
+    "monsterId": 28020504,
+    "blockId": 3004,
+    "level": 76
+  },
+  {
+    "configId": 14004,
+    "groupId": 133004014,
+    "monsterId": 28020506,
+    "blockId": 3004,
+    "level": 76
+  },
+  {
+    "configId": 805033,
+    "groupId": 133004805,
+    "monsterId": 28030302,
+    "blockId": 3004,
+    "level": 76
+  },
+  {
+    "configId": 805032,
+    "groupId": 133004805,
+    "monsterId": 28030302,
+    "blockId": 3004,
+    "level": 76
+  },
+  {
+    "configId": 753,
+    "groupId": 133004258,
+    "monsterId": 28020504,
+    "blockId": 3004,
+    "level": 75
+  },
+  {
+    "configId": 675,
+    "groupId": 133004258,
+    "monsterId": 28020506,
+    "blockId": 3004,
+    "level": 75
+  },
+  {
+    "configId": 14005,
+    "groupId": 133004014,
+    "monsterId": 28020503,
+    "blockId": 3004,
+    "level": 76
+  },
+  {
+    "configId": 752,
+    "groupId": 133004258,
+    "monsterId": 28020504,
+    "blockId": 3004,
+    "level": 75
+  },
+  {
+    "configId": 676,
+    "groupId": 133004258,
+    "monsterId": 28020504,
+    "blockId": 3004,
+    "level": 75
+  },
+  {
+    "configId": 92189,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 485001,
+    "groupId": 133104485,
+    "monsterId": 20010201,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 511004,
+    "groupId": 133104511,
+    "monsterId": 21011001,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511006,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511003,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511002,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511005,
+    "groupId": 133104511,
+    "monsterId": 20011301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511001,
+    "groupId": 133104511,
+    "monsterId": 21030401,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 71,
+    "groupId": 133104031,
+    "monsterId": 24010101,
+    "blockId": 3104,
+    "level": 85
+  },
+  {
+    "configId": 511006,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511003,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511002,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511005,
+    "groupId": 133104511,
+    "monsterId": 20011301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511001,
+    "groupId": 133104511,
+    "monsterId": 21030401,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 92030,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 511004,
+    "groupId": 133104511,
+    "monsterId": 21011001,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511006,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511003,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511002,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511005,
+    "groupId": 133104511,
+    "monsterId": 20011301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511001,
+    "groupId": 133104511,
+    "monsterId": 21030401,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 71,
+    "groupId": 133104031,
+    "monsterId": 24010101,
+    "blockId": 3104,
+    "level": 85
+  },
+  {
+    "configId": 511006,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511003,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511002,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511005,
+    "groupId": 133104511,
+    "monsterId": 20011301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511001,
+    "groupId": 133104511,
+    "monsterId": 21030401,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 92189,
+    "groupId": 133104092,
+    "monsterId": 28030101,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 485001,
+    "groupId": 133104485,
+    "monsterId": 20010201,
+    "blockId": 3104,
+    "level": 84
+  },
+  {
+    "configId": 511004,
+    "groupId": 133104511,
+    "monsterId": 21011001,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511006,
+    "groupId": 133104511,
+    "monsterId": 21020301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511003,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511002,
+    "groupId": 133104511,
+    "monsterId": 21011201,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511005,
+    "groupId": 133104511,
+    "monsterId": 20011301,
+    "blockId": 3104,
+    "level": 82
+  },
+  {
+    "configId": 511001,
+    "groupId": 133104511,
+    "monsterId": 21030401,
+    "blockId": 3104,
+    "level": 82
+  }
+]
