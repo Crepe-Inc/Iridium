@@ -111,7 +111,7 @@ function connect() {
 				let lastIndex = Packets[Packets.length - 1]?.index || 0;
 				let data = packet.data.map((pck, idx) => {
 					pck.index = idx + 1 + lastIndex;
-					console.log(pck)
+					//console.log(pck)
 					return pck;
 				});
 				const p = Packets.concat(data);
