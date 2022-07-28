@@ -18,6 +18,7 @@ const chalk = require('chalk');
 let Session = {
 	//filename
 	//proxy
+	//captureHandle
 }
 const frontend = require('./frontend-server')
 const MT19937_64 = require("../util/mt64");
@@ -470,9 +471,66 @@ async function updateProxyIP(ip, port) {
 	console.log
 }
 
+
+function getCap(){
+	const mode = config.captureMode || "pcap"
+	const dummy={
+		getCaptureParameters:()=>undefined,
+		startPacketCapture:()=>undefined,
+		stopPacketCapture:()=>undefined,
+	}
+	try{
+		switch(mode){
+			case "pcap":
+				return require('./capture_pcap');
+			case "windivert":
+				return require('./capture_windivert');
+			case "none":
+				return dummy;
+			default:
+				throw new Error(`unknown capture mode: ${mode}`);
+		}
+	}catch(err){
+		log.error(err.message);
+		return dummy;
+	}	
+}
+
+async function startPacketCapture(options){
+	if (Session.captureHandle) {
+		return;
+	}
+	log.start(`Capture started`);
+	Session.captureHandle = getCap().startCapture(options,packet=>{
+		queuePacket(packet);
+	})
+}
+
+async function stopPacketCapture(){
+	if (!Session.captureHandle) {
+		return;
+	}
+	log.stop(`Capture stopped`);
+	try{
+		Session.captureHandle();
+		Session.captureHandle = null;
+	}catch(err){
+		console.error(err);
+	}
+}
+
+function getCaptureStatus() {
+	return !!Session.captureHandle;
+}
+
+function getCaptureParameters(){
+	return getCap().getCaptureParameters();	
+}
+
 module.exports = {
 	execute,
 	pcap, gcap,
 	startProxySession, stopProxySession, getSessionStatus,updateProxyIP,
-	queuePacket
+	queuePacket,
+	startPacketCapture,stopPacketCapture, getCaptureStatus,getCaptureParameters
 }

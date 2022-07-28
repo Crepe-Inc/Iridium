@@ -57,6 +57,7 @@ if(process.argv[2] == 'old') {
 	async function cleanup() {
 		console.log('Exiting cleanly...')
 		await sniffer.stopProxySession();
+		await sniffer.stopPacketCapture();
 	}
 
 	process.on('exit', cleanup);
