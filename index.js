@@ -30,7 +30,4 @@ module.exports = {
 		frontend.execute();
 		sniffer.execute();
 	},
-	displayPacket: frontend.queuePacket,
-	decodePacket: sniffer.queuePacket,
-	updateProxyIP: sniffer.updateProxyIP
 }
