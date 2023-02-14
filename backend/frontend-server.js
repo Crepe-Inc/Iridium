@@ -6,16 +6,16 @@ const packetsToSend = [];
 
 let requestListener = async (req, res) => {
     let filePath = path.join(__dirname, "..", "frontend", "public", req.url.split("?")[0]);
-    // try {
+    try {
         res.writeHead(200);
         const file = await fs.promises.readFile(filePath);
         res.end(file);
-    // }
-    // catch (e) {
-    //     res.writeHead(404, { "Content-Type": "text/html" });
-    //     log.error("404 " + req.url);
-    //     res.end('404 Not Found');
-    // }
+    }
+    catch (e) {
+        res.writeHead(404, { "Content-Type": "text/html" });
+        log.error("404 " + req.url);
+        res.end('404 Not Found');
+    }
 }
 
 const clients = [];
