@@ -4,7 +4,7 @@ const path = require('path')
 const log = new (require("./util/log"))('Frontend', 'cyanBright');
 
 let requestListener = async (req, res) => {
-    let filePath = path.join(__dirname, "frontend", "public", req.url.split("?")[0]);
+    let filePath = path.join(__dirname,  "frontend", "public", req.url.split("?")[0]);
     try {
         res.writeHead(200);
         const file = await fs.promises.readFile(filePath);
