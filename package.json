@@ -19,7 +19,7 @@
     "json-bigint": "^1.0.0",
     "node-kcp-token": "github:TheLostTree/node-kcp",
     "pcap-parser": "^0.2.1",
-    "protobufjs": "^6.11.2",
+    "protobufjs": "^7.2.4",
     "udp-packet": "^2.0.0",
     "udp-proxy": "^1.2.0",
     "ws": "^8.4.2"
